@@ -4,9 +4,14 @@ import './styles/index.css';
 import axios from 'axios';
 import { API_URL } from './globals';
 import Cards from './components/Cards';
+import Button from './components/Button';
 
 const App = () => {
   const [cards, setCards] = useState([])
+
+  const alertMe = () => {
+    alert('Button Pressed')
+  }
 
   useEffect(() => {
     async function getCards() {
@@ -23,10 +28,19 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>Nature App</h1>
+
+        <div>
+          <Button type="Birds" handleClick={alertMe} />
+
+          <Button type="Animals" />
+
+          <Button type="Plants" />
+        </div>
+
       </header>
       <main>
 
-      <Cards cards={cards} />
+        <Cards cards={cards} />
 
       </main>
     </div>
