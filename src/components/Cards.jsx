@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { API_URL } from '../globals';
 
 const Cards = (props) => {
 
@@ -8,14 +7,15 @@ const Cards = (props) => {
 
   useEffect(() => {
     async function getCards() {
-      const response = await axios.get(`${API_URL}`)
+      const response = await axios.get(`https://api.inaturalist.org/v1/observations?lat=42.081483&lng=-76.168993&radius=5&iconic_taxa=${props.showCards}&taxon_summary`)
       setCards(response.data.results)
       // console.log(response.data.results[0].default_photo.medium_url)
-      console.log(response.data.results)
+      //console.log(response.data.results)
+
     }
     getCards()
 
-  }, [])
+  }, [props.showCards])
 
   return (
 
@@ -31,11 +31,8 @@ const Cards = (props) => {
               </article>
             </a>
           </div>
-
         ))
-
       }
-
     </div>
   )
 };
