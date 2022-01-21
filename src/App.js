@@ -29,7 +29,7 @@ const App = () => {
       <header className="App-header">
         <h1>Nature App</h1>
 
-        <div>
+        <div className='button_container'>
           <Button type="Birds" handleClick={() => { loadCards('Birds') }} />
 
           <Button type="Animals" handleClick={() => { loadCards('Animals') }} />
