@@ -28,6 +28,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>Nature App</h1>
+        <p className='title'>Near Waterman Ed Cetner.</p>
 
         <div className='button_container'>
           <Button type="Birds" handleClick={() => { loadCards('Birds') }} />

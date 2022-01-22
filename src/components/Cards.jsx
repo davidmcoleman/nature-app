@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const Cards = (props) => {
 
+
+
   const [cards, setCards] = useState([])
 
   useEffect(() => {
@@ -24,7 +26,19 @@ const Cards = (props) => {
         cards.map((card) => (
           <div key={card.id}>
             <a href="https://www.inaturalist.org" className="card">
-              <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}></div>
+              <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}>
+                
+                <div className="row">
+                  {/* <img className="profile_img" src={card.user.icon} alt="Profile" /> */}
+                  {card.user.icon ? <img className="profile_img" src={card.user.icon} alt="Profile" /> : <img className="profile_img" src="/missing-profile.png" alt="Profile" />}
+
+                  <div className="text">
+                    {/* <h2>{card.user.first} {props.last} </h2>
+                    <p>Observed on: {card.observed_on}</p>
+                    <p>Location: {card.place_guess}</p> */}
+                  </div>
+                </div>
+              </div>
               <article>
                 <h1>{card.taxon.preferred_common_name}</h1>
                 <span>iNaturalist.org</span>
