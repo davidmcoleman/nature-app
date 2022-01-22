@@ -63,8 +63,8 @@ h1 {
 .profile_img {
   border-radius: 50%;
   border:3px solid black;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-top: 20px
 }
 
@@ -72,7 +72,7 @@ h1 {
   display: block
 }
 #content {
-  display: none;
+  visibility: hidden;
 }
 
 /* Card Layout */

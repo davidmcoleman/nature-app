@@ -11,7 +11,7 @@ const App = () => {
   const loadCards = (type) => {
 
     document.getElementById('spinner').style.visibility = 'visible';
-    document.getElementById('content').style.display = 'none';
+    document.getElementById('content').style.visibility = 'hidden';
 
     switch (type) {
       case 'Birds':

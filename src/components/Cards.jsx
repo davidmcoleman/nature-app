@@ -17,7 +17,7 @@ const Cards = (props) => {
       } finally {
         // console.log('loaded');
         document.getElementById('spinner').style.visibility = 'hidden';
-        document.getElementById('content').style.display = 'block';
+        document.getElementById('content').style.visibility = 'visible';
       }
 
     }
@@ -36,14 +36,7 @@ const Cards = (props) => {
               <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}>
 
                 <div className="row">
-                  {/* <img className="profile_img" src={card.user.icon} alt="Profile" /> */}
                   {card.user.icon ? <img className="profile_img" src={card.user.icon} alt="Profile" /> : <img className="profile_img" src="/missing-profile.png" alt="Profile" />}
-
-                  <div className="text">
-                    {/* <h2>{card.user.first} {props.last} </h2>
-                    <p>Observed on: {card.observed_on}</p>
-                    <p>Location: {card.place_guess}</p> */}
-                  </div>
                 </div>
               </div>
               <article>
