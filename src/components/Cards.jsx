@@ -7,11 +7,13 @@ const Cards = (props) => {
 
   useEffect(() => {
 
+    //api call
     const getCards = async () => {
+      setCards([])
       try {
         const response = await axios.get(`https://api.inaturalist.org/v1/observations?lat=42.081483&lng=-76.168993&radius=5&iconic_taxa=${props.showCards}&taxon_summary`)
         setCards(response.data.results)
-        // console.log(response.data.results[0].default_photo.medium_url)
+        console.log(response.data)
       } catch (err) {
         console.log(err)
       } finally {
@@ -25,29 +27,33 @@ const Cards = (props) => {
 
   }, [props.showCards])
 
+
+
   return (
 
-    <div className='band'>
-      {
-        cards.map((card) => (
-          <div key={card.id}>
+    ///////add conditional redner....
 
-            <a href="https://www.inaturalist.org" className="card">
-              <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}>
+      <div className='band'>
+        {
+          cards.map((card) => (
+            <div key={card.id}>
 
-                <div className="row">
-                  {card.user.icon ? <img className="profile_img" src={card.user.icon} alt="Profile" /> : <img className="profile_img" src="/missing-profile.png" alt="Profile" />}
+              <a href="https://www.inaturalist.org" className="card">
+                <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}>
+
+                  <div className="row">
+                    {card.user.icon ? <img className="profile_img" src={card.user.icon} alt="Profile" /> : <img className="profile_img" src="/missing-profile.png" alt="Profile" />}
+                  </div>
                 </div>
-              </div>
-              <article>
-                <h1>{card.taxon.preferred_common_name}</h1>
-                <span>iNaturalist.org</span>
-              </article>
-            </a>
-          </div>
-        ))
-      }
-    </div>
+                <article>
+                  <h1>{card.taxon.preferred_common_name}</h1>
+                  <span>iNaturalist.org</span>
+                </article>
+              </a>
+            </div>
+          ))
+        }
+      </div>
   )
 };
 

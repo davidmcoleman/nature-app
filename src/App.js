@@ -46,7 +46,7 @@ const App = () => {
       <main>
         <div id='spinner'> Loading ... </div>
         <div id='content'>
-          <Cards showCards={showCards} />
+          <Cards showCards={showCards} resetState={true}/>
         </div>
       </main>
     </div>

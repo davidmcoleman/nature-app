@@ -46,6 +46,10 @@ h1 {
   font-style: italic;
 }
 
+.loading {
+  text-align: center;
+}
+
 /* Profile Layout */
 
 .row {
