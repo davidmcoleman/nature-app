@@ -10,9 +10,6 @@ const App = () => {
 
   const loadCards = (type) => {
 
-    document.getElementById('spinner').style.visibility = 'visible';
-    document.getElementById('content').style.visibility = 'hidden';
-
     switch (type) {
       case 'Birds':
         setShowCards('Aves')
@@ -44,7 +41,6 @@ const App = () => {
 
       </header>
       <main>
-        <div id='spinner'> Loading ... </div>
         <div id='content'>
           <Cards showCards={showCards} resetState={true}/>
         </div>

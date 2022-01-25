@@ -72,13 +72,6 @@ h1 {
   margin-top: 20px
 }
 
-#spinner {
-  display: block
-}
-#content {
-  visibility: hidden;
-}
-
 /* Card Layout */
 
 .band {
