@@ -7,13 +7,13 @@ const Cards = (props) => {
 
   useEffect(() => {
 
-    //api call
+    //api request
     const getCards = async () => {
       setCards([])
       try {
         const response = await axios.get(`https://api.inaturalist.org/v1/observations?lat=42.081483&lng=-76.168993&radius=5&iconic_taxa=${props.showCards}&taxon_summary`)
         setCards(response.data.results)
-        //console.log(response.data)
+        console.log(response.data)
       } catch (err) {
         console.log(err)
       } finally {
@@ -25,12 +25,11 @@ const Cards = (props) => {
 
   }, [props.showCards])
 
-
-
   return (
 
     <>
       {
+        // Conditional rendering for loading ... message
         cards.length > 0 ?
 
           <div className='band'>
@@ -42,6 +41,7 @@ const Cards = (props) => {
                     <div className="thumb" style={{ backgroundImage: `url(${card.taxon.default_photo.url})` }}>
 
                       <div className="row">
+                        {/* Conditional rendering profile image */}
                         {card.user.icon ? <img className="profile_img" src={card.user.icon} alt="Profile" /> : <img className="profile_img" src="/missing-profile.png" alt="Profile" />}
                       </div>
                     </div>

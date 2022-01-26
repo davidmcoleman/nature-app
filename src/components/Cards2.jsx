@@ -3,8 +3,6 @@ import axios from 'axios';
 
 const TOTAL_PAGES = 10;
 
-
-
 const Item = ({ children, reference }) => {
   return (
     <div ref={reference}>
@@ -67,7 +65,7 @@ const Cards = (props) => {
 
       if (node) observer.current.observe(node);
     },
-    [isLoading, hasMore, props.resetState]
+    [isLoading, hasMore, props.resetState, pages]
   );
 
   const getCards = async (page) => {

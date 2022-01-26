@@ -9,7 +9,7 @@ const App = () => {
   const [showCards, setShowCards] = useState('Aves');
 
   const loadCards = (type) => {
-
+    // switch statement
     switch (type) {
       case 'Birds':
         setShowCards('Aves')
@@ -42,7 +42,7 @@ const App = () => {
       </header>
       <main>
         <div id='content'>
-          <Cards showCards={showCards} resetState={true}/>
+          <Cards showCards={showCards}/>
         </div>
       </main>
     </div>
