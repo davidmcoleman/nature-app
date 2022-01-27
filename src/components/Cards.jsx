@@ -17,7 +17,7 @@ const Cards = (props) => {
       } catch (err) {
         console.log(err)
       } finally {
-        // console.log('loaded');
+
       }
 
     }
